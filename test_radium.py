@@ -34,7 +34,7 @@ def test_hush():
     for root, dirs, files in os.walk(path):
         for name in files:
             name = os.path.join(root, name)
-            print(hashlib.md5(open(name, 'rb').read()).hexdigest())
+            print(hashlib.sha256(open(name, 'rb').read()).hexdigest())
     assert os.walk(path) == tuple(os.walk(path))
     assert hash(name) == type([])
 
